@@ -1,4 +1,6 @@
+import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
+import Footer from "@/components/footer/Footer";
 
 export const metadata = {
   title: "Legend Store",
@@ -7,11 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className= "h-full"
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body className="min-h-full flex flex-col justify-between">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
