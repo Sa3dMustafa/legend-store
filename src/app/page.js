@@ -1,16 +1,10 @@
-
-import Header from "@/components/Header";
-import ProductCard from "@/components/productsComponent/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
+import getAllProducts from "@/lib/getAllProducts";
 
 export default async function Home() {
-  const Data = await fetch("https://dummyjson.com/products");
-  const res = await Data.json();
-  console.log(res); 
+  const res = await getAllProducts();
   return (
-    <div className="grid gap-4">
-      <div className="w-full flex justify-between items-center p-10">
-        <Header data={res.products} />
-      </div>
+    <div className="grid gap-4 p-8">
       {res.products && <ProductCard data={res.products} />}
     </div>
   );

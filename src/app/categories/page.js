@@ -1,19 +1,12 @@
-import Categories from "@/components/categories/Categories";
-import { CategoriesMenu } from "@/components/categories/CategoriseMenu";
-import React from "react";
+import CategoriesClient from "@/components/categories/CategoriesClient";
+import getAllCategores from "@/lib/getAllCategores";
 
-async function page() {
-    
-  const response = await fetch("https://dummyjson.com/products/categories");
-  const data = await response.json();
-  console.log(data);
+export default async function Page() {
 
-  return (
-    <div>
-      <Categories data={data} />
-      <CategoriesMenu data={data} />
-    </div>
-  );
+    const categories = await getAllCategores();
+
+    return (
+        <CategoriesClient categories={categories}/>
+    )
+
 }
-
-export default page;

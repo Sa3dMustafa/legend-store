@@ -1,4 +1,4 @@
-import { LodaingCard } from "@/components/productsComponent/LodaingCard";
+import { LodaingCard } from "@/components/products/LodaingCard";
 import React from "react";
 
 function loading() {
