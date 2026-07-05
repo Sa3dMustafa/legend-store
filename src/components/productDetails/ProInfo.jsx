@@ -34,7 +34,7 @@ function ProInfo({ product }) {
 
       <Separator className="my-8" />
 
-      <div className="space-y-3">
+      <div className="space-y-3 flex ">
         <p>
           <span className="font-semibold">Weight:</span> {product.weight} g
         </p>
@@ -52,14 +52,6 @@ function ProInfo({ product }) {
         <p>
           <span className="font-semibold">Return:</span> {product.returnPolicy}
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4 mt-8">
-        <Button size="lg">Add To Cart</Button>
-
-        <Button variant="outline" size="lg">
-          Buy Now
-        </Button>
       </div>
     </div>
   );

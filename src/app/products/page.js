@@ -7,8 +7,10 @@ export default async function Products() {
   const res = await getAllProducts();
   console.log(res);
   return (
-    <div className="grid gap-4 p-8">
-      {res.products && <ProductCard data={res.products} />}
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-8">
+      {res.products && res.products.map((product) => (
+        <ProductCard key={product.id} data={product} />
+      ))}
     </div>
   );
 }
